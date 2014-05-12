@@ -1,6 +1,7 @@
 // TODO(vojta): add an API for exporting these APIs to global namespace.
 var di = require('di');
-import {use, inject} from '../../src/testing';
+var use = require('di/dist/cjs/testing').use;
+var inject = require('di/dist/cjs/testing').inject;
 
 import {CoffeeMaker} from '../coffee/coffee_maker';
 import {Heater} from '../coffee/heater';
@@ -9,25 +10,13 @@ import {MockHeater, DummyHeater} from './mocks';
 
 
 describe('simple mocking in beforeEach', function() {
-  // Use DummyHeater, which has @Provide(Heater) annotation.
-  var injector = new di.Injector([DummyHeater]);
-  beforeEach(function() {
-    var fn = use(DummyHeater);
-    console.log("*****fn", fn)
-    return fn;
-  });
+  beforeEach(use(DummyHeater).as(Heater));
   
-  
-  it('should brew2', function() {
-    var cm = injector.get(CoffeeMaker);
-    console.log("****", cm)
-    cm.brew();
-  });
-
   it('should brew', inject(CoffeeMaker, function(cm) {
-    console.log("****", cm)
+
     cm.brew();
   }));
+
 });
 
 describe('more mocking in beforeEach', function() {

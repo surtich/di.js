@@ -13,6 +13,4 @@ traceur.require.makeDefault(function(filename) {
 });
 
 var arguments = process.argv.slice(2);
-//process.argv = [ 'mocha' ];
-require("mocha/bin/_mocha")
-//require(arguments[0]);
+require("jasmine-node/bin/jasmine-node")

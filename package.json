@@ -14,8 +14,8 @@
   "dependencies": {
     "traceur": "~0.0.33",
     "es6-shim": "paulmillr/es6-shim",
-    "expect": "~0.1.1",
-    "mocha": "~1.18.2"
+    "jasmine-node": "~1.14.3",
+    "di": "2"
   },
   "devDependencies": {
     "rtts-assert": "angular/assert",

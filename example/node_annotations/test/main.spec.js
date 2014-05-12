@@ -1,5 +1,4 @@
 var di = require('di');
-var expect = require('expect');
 import {Car} from '../car';
 import {Engine} from '../engine';
 import {MockEngine} from './mock_engine';
