@@ -1,8 +1,7 @@
-var di = require('di');
-var Car = require('./car');
+import {Inject, Injector} from 'di';
+import {Car} from './car';
 
-
-var injector = new di.Injector([]);
+var injector = new Injector([]);
 
 console.log('Getting in the car...');
 var car = injector.get(Car);
