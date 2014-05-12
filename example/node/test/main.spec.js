@@ -1,3 +1,5 @@
+var expect = require('expect');
+
 var di = require('di');
 var Car = require('../car');
 var MockEngine = require('./mock_engine');

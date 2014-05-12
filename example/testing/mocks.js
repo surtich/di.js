@@ -11,7 +11,9 @@ class MockHeater {
 @Provide(Heater)
 class DummyHeater {
   constructor() {}
-  on() {}
+  on() {
+    console.log("Hola2")
+  }
   off() {}
 }
 

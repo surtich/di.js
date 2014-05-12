@@ -1,2 +1,7 @@
 // This is an interface.
-export class Heater {}
+export class Heater {
+  on() {
+    console.log("Hola")
+  }
+  off() {}
+}
